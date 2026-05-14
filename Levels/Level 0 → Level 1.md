@@ -55,3 +55,54 @@ Open your terminal and SSH into the game:
 
 ```bash
 ssh bandit0@bandit.labs.overthewire.org -p 2220
+```
+
+### Step 5: Find the password for Level 1
+
+Once logged in, you'll see the prompt:
+bash
+```
+bandit0@bandit:~$
+```
+List all files in your home directory:
+bash
+```
+bandit0@bandit:~$ ls -la
+```
+Output:
+
+```
+total 24
+drwxr-xr-x   2 root    root    4096 Apr  3 15:17 ./
+drwxr-xr-x 150 root    root    4096 Apr  3 15:20 ../
+-rw-r--r--   1 root    root     220 Mar 31  2024 .bash_logout
+-rw-r--r--   1 root    root    3851 Apr  3 15:10 .bashrc
+-rw-r--r--   1 root    root     807 Mar 31  2024 .profile
+-rw-r-----   1 bandit1 bandit0  438 Apr  3 15:17 readme
+```
+Notice the file named readme — this contains the password for Level 1.
+
+Read the file:
+```bash
+
+bandit0@bandit:~$ cat readme
+```
+Output:
+
+
+```Congratulations on your first steps into the bandit game!!
+Please make sure you have read the rules at https://overthewire.org/rules/
+If you are following a course, workshop, walkthrough or other educational activity,
+please inform the instructor about the rules as well and encourage them to
+contribute to the OverTheWire community so we can keep these games free!
+
+The password you are looking for is: ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+```
+### Step 6: Log out
+
+When you're done, exit the SSH session:
+```bash
+
+bandit0@bandit:~$ exit
+```
+
