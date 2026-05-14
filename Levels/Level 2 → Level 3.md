@@ -29,3 +29,17 @@ In Linux, spaces are used as **delimiters** between command arguments. When you 
 
 ```bash
 cat spaces in this filename
+```
+The shell interprets this as:
+
+  - cat (command)
+
+  - spaces (first argument - a file named "spaces")
+
+- in (second argument - a file named "in")
+
+  - this (third argument - a file named "this")
+
+  - filename (fourth argument - a file named "filename")
+
+It thinks you're trying to cat four separate files — not one file with spaces in its name.
