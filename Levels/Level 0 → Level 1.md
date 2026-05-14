@@ -57,7 +57,7 @@ Open your terminal and SSH into the game:
 ssh bandit0@bandit.labs.overthewire.org -p 2220
 ```
 
-### Step 5: Find the password for Level 1
+### Step 2: Find the password for Level 1
 
 Once logged in, you'll see the prompt:
 bash
@@ -98,7 +98,7 @@ contribute to the OverTheWire community so we can keep these games free!
 
 The password you are looking for is: ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
 ```
-### Step 6: Log out
+### Step 3: Log out
 
 When you're done, exit the SSH session:
 ```bash
