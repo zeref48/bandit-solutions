@@ -52,4 +52,65 @@ In Linux/Unix:
 
   - The shell doesn't know you meant "the actual file named -"
 
+## 💡 Solution
+### Step 1: Connect to Level 1
+```bash
 
+ssh bandit1@bandit.labs.overthewire.org -p 2220
+```
+Password: ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+### Step 2: List files in the home directory
+```bash
+
+bandit1@bandit:~$ ls -al
+```
+Output:
+```
+
+total 24
+-rw-r-----   1 bandit2 bandit1   33 Apr  3 15:17 -
+drwxr-xr-x   2 root    root    4096 Apr  3 15:17 .
+drwxr-xr-x 150 root    root    4096 Apr  3 15:20 ..
+-rw-r--r--   1 root    root     220 Mar 31  2024 .bash_logout
+-rw-r--r--   1 root    root    3851 Apr  3 15:10 .bashrc
+-rw-r--r--   1 root    root     807 Mar 31  2024 .profile
+```
+Notice the file named - (first line)!
+### Step 3: Read the file named -
+
+You cannot use:
+```bash
+
+bandit1@bandit:~$ cat -     # This will hang, waiting for keyboard input
+```
+Instead, use one of these methods:
+- Method 1: Use ./ prefix (Easiest)
+``` bash
+
+bandit1@bandit:~$ cat ./-
+```
+Output:
+
+```
+263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+```
+The ./ tells the shell: "Look in the current directory for a file named -"
+
+
+- Method 2: Use absolute path (Works!)
+```bash
+
+bandit1@bandit:~$ cat /home/bandit1/-
+```
+Output:
+
+```
+263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+```
+
+### Step 4: Log into Level 2
+```bash
+
+ssh bandit2@bandit.labs.overthewire.org -p 2220
+```
+Password: 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
