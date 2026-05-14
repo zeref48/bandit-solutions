@@ -67,7 +67,7 @@ drwxr-xr-x 150 root    root    4096 Apr  3 15:20 ..
 -rw-r--r--   1 root    root     807 Mar 31  2024 .profile
 -rw-r-----   1 bandit3 bandit2   33 Apr  3 15:17 --spaces in this filename--
 ```
-Notice the file named --spaces in this filename--!
+Notice the file named --spaces in this filename-- !!!
 ### Step 3: Try to read the file (and see what doesn't work)
 ```bash
 
