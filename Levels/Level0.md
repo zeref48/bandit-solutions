@@ -32,37 +32,38 @@ Think of it like a **secure tunnel** between your computer and the Bandit server
 ssh [username]@[hostname] -p [port] bash
 ```
 
-💡 Solution
+##💡 Solution
+
 Step 1: Connect via SSH
 
 Open your terminal (Linux/Mac) or Command Prompt/PowerShell with SSH enabled (Windows 10+), then type:
-bash
+```bash
 
 ssh bandit0@bandit.labs.overthewire.org -p 2220
-
+```
 Step 2: Accept the host key
 
 When prompted about host authenticity, type yes and press Enter:
 text
-
+```
 The authenticity of host '[bandit.labs.overthewire.org]:2220 ([13.63.65.121]:2220)' can't be established.
 ED25519 key fingerprint is: SHA256:C2ihUBV7ihnV1wUXRb4RrEcLfXC5CXlhmAAM/urerLY
 This key is not known by any other names.
 Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 Warning: Permanently added '[bandit.labs.overthewire.org]:2220' (ED25519) to the list of known hosts.
-
+```
 Step 3: Enter the password
 text
-
+```
 bandit0@bandit.labs.overthewire.org's password: bandit0
-
+```
     ⚠️ Note: Nothing will show on screen as you type the password. No asterisks, no dots. This is normal for security.
 
 Step 4: Welcome message
 
 After successful login, you'll see the OverTheWire welcome banner:
 text
-
+```
                          _                     _ _ _   
                         | |__   __ _ _ __   __| (_) |_ 
                         | '_ \ / _` | '_ \ / _` | | __|
@@ -90,7 +91,7 @@ backend: gibson-0
   www. `---` ver     '---' he       '---" ire.org
 
 Welcome to OverTheWire!
-
+```
 If you find any problems, please report them to the #wargames channel on
 discord or IRC.
 
