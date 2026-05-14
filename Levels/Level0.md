@@ -44,7 +44,7 @@ ssh bandit0@bandit.labs.overthewire.org -p 2220
 ### Step 2: Accept the host key
 
 When prompted about host authenticity, type yes and press Enter:
-text
+
 ```
 The authenticity of host '[bandit.labs.overthewire.org]:2220 ([13.63.65.121]:2220)' can't be established.
 ED25519 key fingerprint is: SHA256:C2ihUBV7ihnV1wUXRb4RrEcLfXC5CXlhmAAM/urerLY
@@ -53,7 +53,7 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 Warning: Permanently added '[bandit.labs.overthewire.org]:2220' (ED25519) to the list of known hosts.
 ```
 ### Step 3: Enter the password
-text
+
 ```
 bandit0@bandit.labs.overthewire.org's password: bandit0
 ```
@@ -62,7 +62,7 @@ bandit0@bandit.labs.overthewire.org's password: bandit0
 ### Step 4: Welcome message
 
 After successful login, you'll see the OverTheWire welcome banner:
-text
+
 ```
                          _                     _ _ _   
                         | |__   __ _ _ __   __| (_) |_ 
@@ -108,7 +108,7 @@ bash
 bandit0@bandit:~$ ls -la
 ```
 Output:
-text
+
 ```
 total 24
 drwxr-xr-x   2 root    root    4096 Apr  3 15:17 ./
@@ -126,7 +126,7 @@ Read the file:
 bandit0@bandit:~$ cat readme
 ```
 Output:
-text
+
 
 ```Congratulations on your first steps into the bandit game!!
 Please make sure you have read the rules at https://overthewire.org/rules/
