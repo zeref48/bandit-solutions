@@ -29,5 +29,6 @@ Think of it like a **secure tunnel** between your computer and the Bandit server
 ### SSH Syntax Breakdown
 
 ```bash
-ssh [username]@[hostname] -p [port]
+ssh [username]@[hostname] -p [port] bash```
+
 
