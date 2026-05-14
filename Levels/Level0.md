@@ -32,7 +32,7 @@ Think of it like a **secure tunnel** between your computer and the Bandit server
 ssh [username]@[hostname] -p [port] bash
 ```
 
-##💡 Solution
+## 💡 Solution
 
 Step 1: Connect via SSH
 
