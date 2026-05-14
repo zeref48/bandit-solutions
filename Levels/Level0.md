@@ -34,7 +34,7 @@ ssh [username]@[hostname] -p [port] bash
 
 ## 💡 Solution
 
-Step 1: Connect via SSH
+<u>Step 1: Connect via SSH</u>
 
 Open your terminal (Linux/Mac) or Command Prompt/PowerShell with SSH enabled (Windows 10+), then type:
 ```bash
