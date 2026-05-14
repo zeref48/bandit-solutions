@@ -38,3 +38,18 @@ The challenge here is that the filename is just a **dash (`-`)** .
 
 ```bash
 bandit1@bandit:~$ cat -
+```
+The terminal will just sit there, waiting for you to type input. This is because many Linux commands use - as a special character meaning "read from standard input" (your keyboard).
+
+To exit this state, press Ctrl+C.
+Why does this happen?
+
+In Linux/Unix:
+
+  - Most commands accept - as a shorthand for stdin/stdout
+
+  - cat - means "read from keyboard and display it"
+
+  - The shell doesn't know you meant "the actual file named -"
+
+
