@@ -34,14 +34,14 @@ ssh [username]@[hostname] -p [port] bash
 
 ## 💡 Solution
 
-<u>Step 1: Connect via SSH</u>
+### Step 1: Connect via SSH 
 
 Open your terminal (Linux/Mac) or Command Prompt/PowerShell with SSH enabled (Windows 10+), then type:
 ```bash
 
 ssh bandit0@bandit.labs.overthewire.org -p 2220
 ```
-Step 2: Accept the host key
+### Step 2: Accept the host key
 
 When prompted about host authenticity, type yes and press Enter:
 text
@@ -52,14 +52,14 @@ This key is not known by any other names.
 Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 Warning: Permanently added '[bandit.labs.overthewire.org]:2220' (ED25519) to the list of known hosts.
 ```
-Step 3: Enter the password
+### Step 3: Enter the password
 text
 ```
 bandit0@bandit.labs.overthewire.org's password: bandit0
 ```
     ⚠️ Note: Nothing will show on screen as you type the password. No asterisks, no dots. This is normal for security.
 
-Step 4: Welcome message
+### Step 4: Welcome message
 
 After successful login, you'll see the OverTheWire welcome banner:
 text
@@ -95,7 +95,7 @@ Welcome to OverTheWire!
 If you find any problems, please report them to the #wargames channel on
 discord or IRC.
 
-Step 5: Find the password for Level 1
+### Step 5: Find the password for Level 1
 
 Once logged in, you'll see the prompt:
 bash
@@ -136,7 +136,7 @@ contribute to the OverTheWire community so we can keep these games free!
 
 The password you are looking for is: ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
 ```
-Step 6: Log out
+### Step 6: Log out
 
 When you're done, exit the SSH session:
 ```bash
