@@ -36,7 +36,7 @@ The shell interprets this as:
 
   - spaces (first argument - a file named "spaces")
 
-- in (second argument - a file named "in")
+  - in (second argument - a file named "in")
 
   - this (third argument - a file named "this")
 
