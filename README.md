@@ -2,7 +2,7 @@
 
 [![Levels Completed](https://img.shields.io/badge/Levels-XX%2F34-brightgreen)]()
 [![Linux](https://img.shields.io/badge/OS-Linux-blue)]()
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]()
+
 
 A comprehensive, well-documented collection of my solutions for the **OverTheWire Bandit** wargame — a beginner-friendly journey into Linux command-line security.
 
