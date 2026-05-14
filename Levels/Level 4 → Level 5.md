@@ -31,6 +31,7 @@ This level introduces the concept of **file types** and **human-readable** conte
 | Source code | ✅ Yes | `#include <stdio.h>` |
 | Configuration files | ✅ Yes | `username=admin` |
 | Binary executables | ❌ No | `ELF` header, random bytes |
+| DOS executables | ❌ No | `MZ` header, machine code |
 | Images | ❌ No | PNG/JPG headers, binary data |
 | Compiled programs | ❌ No | Machine code |
 
