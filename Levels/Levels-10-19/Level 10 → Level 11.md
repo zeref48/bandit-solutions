@@ -48,3 +48,64 @@ The `=` at the end is padding to make the length a multiple of 4.
 
 ```bash
 base64 [options] [file]
+```
+## 💡 Solution
+### Step 1: Connect to Level 10
+```bash
+
+ssh bandit10@bandit.labs.overthewire.org -p 2220
+```
+Password: FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+### Step 2: Check what files are in the home directory
+```bash
+
+bandit10@bandit:~$ ls -al
+```
+Output:
+```
+
+total 24
+drwxr-xr-x   2 root     root     4096 Apr  3 15:17 .
+drwxr-xr-x 150 root     root     4096 Apr  3 15:20 ..
+-rw-r--r--   1 root     root      220 Mar 31  2024 .bash_logout
+-rw-r--r--   1 root     root     3851 Apr  3 15:10 .bashrc
+-rw-r-----   1 bandit11 bandit10   69 Apr  3 15:17 data.txt
+-rw-r--r--   1 root     root      807 Mar 31  2024 .profile
+```
+There's a file named data.txt (69 bytes).
+### Step 3: View the encoded data (optional)
+```
+
+bandit10@bandit:~$ cat data.txt
+```
+Output:
+```
+
+VGhlIHBhc3N3b3JkIGlzIGR0UjE3M2ZaS2IwUlJzREZTU3NnMlJXbnBOVmozcVJy
+```
+This is Base64 encoded data.
+Step 4: Decode the Base64 data
+bash
+
+bandit10@bandit:~$ base64 -d data.txt
+
+Output:
+text
+
+The password is dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+
+The password is directly in the decoded text!
+Step 5: Extract the password
+
+The password is: dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+Step 6: Save the password
+bash
+
+echo "bandit11: dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr" >> ~/bandit_notes.txt
+
+Step 7: Log into Level 11
+bash
+
+ssh bandit11@bandit.labs.overthewire.org -p 2220
+
+Password: dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
