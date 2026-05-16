@@ -50,3 +50,65 @@ ROT13 (rotate by 13 places) is a simple letter substitution cipher that replaces
 
 ```bash
 tr [options] set1 set2
+```
+## 💡 Solution
+### Step 1: Connect to Level 11
+```bash
+
+ssh bandit11@bandit.labs.overthewire.org -p 2220
+```
+Password: dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+### Step 2: Check what files are in the home directory
+```bash
+
+bandit11@bandit:~$ ls -al
+```
+Output:
+```
+total 24
+drwxr-xr-x   2 root     root     4096 Apr  3 15:17 .
+drwxr-xr-x 150 root     root     4096 Apr  3 15:20 ..
+-rw-r--r--   1 root     root      220 Mar 31  2024 .bash_logout
+-rw-r--r--   1 root     root     3851 Apr  3 15:10 .bashrc
+-rw-r-----   1 bandit12 bandit11   49 Apr  3 15:17 data.txt
+-rw-r--r--   1 root     root      807 Mar 31  2024 .profile
+```
+There's a file named data.txt.
+### Step 3: View the encoded data
+```bash
+
+bandit11@bandit:~$ cat data.txt
+```
+Output:
+```
+
+Gur cnffjbeq vf 7k16JArUVv5LxVuJfsSVdbbtaHGlw9D4
+```
+This is ROT13 encoded text.
+### Step 4: Decode ROT13 using tr
+
+ROT13 maps:
+
+    A-Z → N-ZA-M (first 13 letters to last 13, and vice versa)
+
+    a-z → n-za-m
+
+Using tr:
+```bash
+
+bandit11@bandit:~$ cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+```
+Output:
+```
+
+The password is 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+```
+Note: Be careful with the pipe syntax — only one | is needed, not two!
+
+
+### Step 7: Log into Level 12
+```bash
+
+ssh bandit12@bandit.labs.overthewire.org -p 2220
+```
+Password: 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
