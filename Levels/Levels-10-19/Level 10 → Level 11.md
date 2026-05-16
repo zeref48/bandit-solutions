@@ -84,28 +84,21 @@ Output:
 VGhlIHBhc3N3b3JkIGlzIGR0UjE3M2ZaS2IwUlJzREZTU3NnMlJXbnBOVmozcVJy
 ```
 This is Base64 encoded data.
-Step 4: Decode the Base64 data
-bash
+### Step 4: Decode the Base64 data
+```bash
 
 bandit10@bandit:~$ base64 -d data.txt
-
+```
 Output:
-text
+```
 
 The password is dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
-
+```
 The password is directly in the decoded text!
-Step 5: Extract the password
 
-The password is: dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
-Step 6: Save the password
-bash
-
-echo "bandit11: dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr" >> ~/bandit_notes.txt
-
-Step 7: Log into Level 11
-bash
+### Step 5: Log into Level 11
+```bash
 
 ssh bandit11@bandit.labs.overthewire.org -p 2220
-
+```
 Password: dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
