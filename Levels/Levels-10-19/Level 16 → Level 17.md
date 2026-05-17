@@ -126,9 +126,10 @@ chmod 600 ~/bandit17_key
 
 ssh -i ~/bandit17_key bandit17@bandit.labs.overthewire.org -p 2220
 ```
-pasword is : EReVavePLFHtFlFsjn3hyzMlvSuSAcRD
+
 ### Step 7: Once logged in, read the password (optional)
 ```bash
 
 bandit17@bandit:~$ cat /etc/bandit_pass/bandit17
 ```
+pasword is : EReVavePLFHtFlFsjn3hyzMlvSuSAcRD
