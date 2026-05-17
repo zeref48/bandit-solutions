@@ -46,3 +46,38 @@ SSL (Secure Sockets Layer) and TLS (Transport Layer Security) are protocols that
 ```bash
 openssl s_client -connect host:port
 ```
+## 💡 Solution
+### Step 1: Connect to Level 15
+```bash
+
+ssh bandit15@bandit.labs.overthewire.org -p 2220
+```
+Password: 8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
+### Step 2: Connect to the SSL/TLS service on port 30001
+```bash
+
+bandit15@bandit:~$ openssl s_client -connect localhost:30001
+```
+This will establish an encrypted connection. You'll see SSL certificate information (self-signed certificate from "SnakeOil"), then a blank line where you can type.
+### Step 3: Submit the current level's password
+
+Once connected, type the password for bandit15 and press Enter:
+```
+
+8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
+```
+### Step 4: Receive the response
+
+The service will respond with the password for the next level:
+```
+
+Correct!
+kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
+```
+
+Step 5: Log into Level 16
+```bash
+
+ssh bandit16@bandit.labs.overthewire.org -p 2220
+```
+Password: kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
