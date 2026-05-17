@@ -66,12 +66,7 @@ text
 
 cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8
 
-### Step 4: Save the password
-```bash
-
-echo "bandit19: cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8" >> ~/bandit_notes.txt
-```
-### Step 5: Log into Level 19
+### Step 4: Log into Level 19
 ```bash
 
 ssh bandit19@bandit.labs.overthewire.org -p 2220
