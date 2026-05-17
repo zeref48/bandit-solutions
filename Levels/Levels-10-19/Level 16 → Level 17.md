@@ -101,15 +101,10 @@ verify return:1
 Correct!
 -----BEGIN RSA PRIVATE KEY-----
 MIIEogIBAAKCAQEAvmOkuifmMg6HL2YPIOjon6iWfbp7c3jx34YkYWqUH57SUdyJ
-imZzeyGC0gtZPGujUSxiJSWI/oTqexh+cAMTSMlOJf7+BrJObArnxd9Y7YT2bRPQ
-Ja6Lzb558YW3FZl87ORiO+rW4LCDCNd2lUvLE/GL2GWyuKN0K5iCd5TbtJzEkQTu
-DSt2mcNn4rhAL+JFr56o4T6z8WWAW18BR6yGrMq7Q/kALHYW3OekePQAzL0VUYbW
-JGTi65CxbCnzc/w4+mqQyvmzpWtMAzJTzAzQxNbkR2MBGySxDLrjg0LWN6sK7wNX
-R8VdwSk8r9FGLS+9aKcV5PI/WEKlwgXinB3OhYimtiG2Cg5JCqIZFHxD6MjEGOiu
-L8ktHMPvodBwNsSBULpG0QKBgBAplTfC1HOnWiMGOU3KPwYWt0O6CdTkmJOmL8Ni
-blh9elyZ9FsGxsgtRBXRsqXuz7wtsQAgLHxbdLq/ZJQ7YfzOKU4ZxEnabvXnvWkU
-YOdjHdSOoKvDQNWu6ucyLRAWFuISeXw9a/9p7ftpxm0TSgyvmfLF2MIAEwyzRqaM
-77pBAoGAMmjmIJdjp+Ez8duyn3ieo36yrttF5NSsJLAbxFpdlc1gvtGCWW+9Cq0b
+imZzeyGC0gtZPGujUSxiJ...........................................
+................................................................
+................................................................
+....................................dLq/ZJQ7YfzOKU4ZxEnabvXnvWkU
 dxviW8+TFVEBl1O4f7HVm6EpTscdDxU+bCXWkfjuRb7Dy9GOtt9JPsX8MBTakzh3
 vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
 -----END RSA PRIVATE KEY-----
@@ -121,3 +116,18 @@ Copy the entire private key (from -----BEGIN RSA PRIVATE KEY----- to -----END RS
 nano ~/bandit17_key
 ```
 Paste the key, save, and exit.
+### Step 5: Set correct permissions
+```bash
+
+chmod 600 ~/bandit17_key
+```
+Step 6: Use the key to log into Level 17
+```bash
+
+ssh -i ~/bandit17_key bandit17@bandit.labs.overthewire.org -p 2220
+```
+Step 7: Once logged in, read the password (optional)
+```bash
+
+bandit17@bandit:~$ cat /etc/bandit_pass/bandit17
+```
