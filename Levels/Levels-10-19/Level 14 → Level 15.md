@@ -54,45 +54,38 @@ A port is a virtual endpoint for network communication. Think of an IP address a
 ```bash
 nc [options] host port
 ```
-💡 Solution
-Step 1: Connect to Level 14
-bash
+## 💡 Solution
+### Step 1: Connect to Level 14
+```bash
 
 ssh bandit14@bandit.labs.overthewire.org -p 2220
-
+```
 Password: MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
-Step 2: Connect to the service on port 30000 using netcat
-bash
+### Step 2: Connect to the service on port 30000 using netcat
+```bash
 
 bandit14@bandit:~$ nc localhost 30000
-
+```
 This will connect to the service. It will wait for you to type something.
-Step 3: Submit the current level's password
+### Step 3: Submit the current level's password
 
 Type the password for bandit14 and press Enter:
-text
+```
 
 MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
-
-Step 4: Receive the response
+```
+### Step 4: Receive the response
 
 The service will respond with the password for the next level:
-text
+```
 
 Correct!
 8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
+```
 
-Step 5: Save the password
-bash
-
-echo "bandit15: 8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo" >> ~/bandit_notes.txt
-
-Step 6: Exit netcat
-
-Press Ctrl+C or Ctrl+D to close the connection.
-Step 7: Log into Level 15
-bash
+Step 5: Log into Level 15
+```bash
 
 ssh bandit15@bandit.labs.overthewire.org -p 2220
-
+```
 Password: 8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
