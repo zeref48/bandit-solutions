@@ -87,11 +87,11 @@ Only bandit20 can read this file.
 bandit19@bandit:~$ ./bandit20-do
 ```
 Output:
-text
+```
 
 Run a command as another user.
   Example: ./bandit20-do whoami
-
+```
 This tells us the binary runs a command as another user (bandit20).
 ### Step 5: Test who you are when using the binary
 ```bash
@@ -110,11 +110,11 @@ This confirms the binary runs commands as bandit20.
 bandit19@bandit:~$ ./bandit20-do cat /etc/bandit_pass/bandit20
 ```
 Output:
-text
+```
 
 0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
 
-
+```
 ### Step 7: Log into Level 20
 ```bash
 
