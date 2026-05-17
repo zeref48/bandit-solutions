@@ -53,7 +53,7 @@ Since we need both a server and a client running at the same time, we'll use:
 ### Step 1: Connect to Level 20
 
 ```bash
-ssh bandit20@bandit.labs.overthewire.org -p 2220# 🔓 Level 20 → Level 21 — Connecting Programs with netcat
+ssh bandit20@bandit.labs.overthewire.org -p 2220# 
 ```
 Password: 0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
 ### Step 2: Check what's in the home directory
